@@ -13,8 +13,8 @@ module byte_memory(
     generate 
         for (i = 0; i < 8 ; i = i + 1)
             d_latch inst(
-                .D(data[i])
-                .E(store)
+                .D(data[i]),
+                .E(store),
                 .Q(memory[i])
             )
         end
