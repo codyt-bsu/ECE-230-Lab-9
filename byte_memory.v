@@ -7,25 +7,11 @@ module byte_memory(
     // Herein, implement D-Latch style memory
     // that stores the input data into memory
     // when store is high
-    
-    always @(store, data) begin
+
+    always @(data, store) begin
         if (store)
             memory <= data;
     end
-    
-//    genvar i;
-//    generate 
-//        for (i = 0; i < 8 ; i = i + 1)
-//        begin
-//            d_latch inst(
-//                .D(data[i]),
-//                .E(store),
-//                .Q(memory[i])
-//            );
-//        end
-//    endgenerate
-
-
 
     // Memory should always output the value
     // stored, and it should only change
