@@ -1,6 +1,7 @@
 module d_latch(
     input D, E,
-    output reg Q, NotQ
+    output reg Q,
+    output NotQ
 );
 
     always @(D, E) begin 
