@@ -12,8 +12,11 @@ In this lab, you learned about the basic building block of sequential circuits: 
 | Question 3 | Your answers to the question | 25% |
 
 ## Names
+Cody Toone, Canyon Holman
 
 ## Summary
+
+We created a D-latch which allows us to store a single bit in the circuit to read at any time. Then we used an 8 bit version of it combined with multiplexers and demultiplexers to store and read data like a computer and display it with LEDs.
 
 ## Lab Questions
 
