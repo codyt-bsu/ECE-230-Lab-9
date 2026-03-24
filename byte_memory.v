@@ -8,20 +8,10 @@ module byte_memory(
     // that stores the input data into memory
     // when store is high
 
-    
-    genvar i;
-    generate 
-        for (i = 0; i < 8 ; i = i + 1)
-        begin
-            d_latch inst(
-                .D(data[i]),
-                .E(store),
-                .Q(memory[i])
-            );
-        end
-    endgenerate
-
-
+    always @(data, store) begin
+        if (store)
+            memory <= data;
+    end
 
     // Memory should always output the value
     // stored, and it should only change
