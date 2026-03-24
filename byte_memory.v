@@ -12,11 +12,12 @@ module byte_memory(
     genvar i;
     generate 
         for (i = 0; i < 8 ; i = i + 1)
+        begin
             d_latch inst(
                 .D(data[i]),
                 .E(store),
                 .Q(memory[i])
-            )
+            );
         end
     endgenerate
 
