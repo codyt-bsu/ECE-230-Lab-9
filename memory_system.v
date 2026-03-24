@@ -10,39 +10,53 @@ module memory_system(
     wire store2;
     wire store3;
 
+    wire [7:0] data0;
+    wire [7:0] data1;
+    wire [7:0] data2;
+    wire [7:0] data3;
+
     demultiplexer_1bit storeDemux(
-        .data(store)
-        .sel(addr)
-        .A(store0)
-        .B(store1)
-        .C(store2)
+        .data(store),
+        .sel(addr),
+        .A(store0),
+        .B(store1),
+        .C(store2),
         .D(store3)
     );
 
+    demultiplexer_8bit dataDmux(
+        .data(data),
+        .sel(addr),
+        .A(data0),
+        .B(data1),
+        .C(data2),
+        .D(data3)
+    );
+
     byte_memory mem0(
-        .store(store0)
-        .data(data)
+        .store(store0),
+        .data(data0),
         .memory(memory)
     );
 
     byte_memory mem1(
-        .store(store1)
-        .data(data)
+        .store(store1),
+        .data(data1),
         .memory(memory)
     );
 
     byte_memory mem2(
-        .store(store2)
-        .data(data)
+        .store(store2),
+        .data(data2),
         .memory(memory)
     );
 
     byte_memory mem3(
-        .store(store3)
-        .data(data)
+        .store(store3),
+        .data(data3),
         .memory(memory)
     );
-    
+
     // This should instantiate 4 instances of
     // byte_memory, and then demultiplex
     // data and store into the one selected by
