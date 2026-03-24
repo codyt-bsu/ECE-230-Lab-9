@@ -47,28 +47,28 @@ module memory_system(
         .Y(memory)
     );
 
-    byte_memory mem0(
+    byte_memory memory0(
         .store(store0),
         .data(data0),
-        .memory(memory0)
+        .memory(mem0)
     );
 
-    byte_memory mem1(
+    byte_memory memory1(
         .store(store1),
         .data(data1),
-        .memory(memory1)
+        .memory(mem1)
     );
 
-    byte_memory mem2(
+    byte_memory memory2(
         .store(store2),
         .data(data2),
-        .memory(memory2)
+        .memory(mem2)
     );
 
-    byte_memory mem3(
+    byte_memory memory3(
         .store(store3),
         .data(data3),
-        .memory(memory3)
+        .memory(mem3)
     );
 
     // This should instantiate 4 instances of
@@ -88,4 +88,3 @@ module memory_system(
     // 1. Multiplex selected byte -> memory
 
 endmodule
-
