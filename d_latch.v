@@ -3,6 +3,11 @@ module d_latch(
     output Q, NotQ
 );
 
-    // Will contain D-Latch behavior
+    always @(E) begin 
+        if (E)
+            Q <= D;
+    end
+
+    assign NotQ = ~Q; 
 
 endmodule
