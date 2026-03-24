@@ -15,6 +15,11 @@ module memory_system(
     wire [7:0] data2;
     wire [7:0] data3;
 
+    wire [7:0] mem0;
+    wire [7:0] mem1;
+    wire [7:0] mem2;
+    wire [7:0] mem3;
+
     demultiplexer_1bit storeDemux(
         .data(store),
         .sel(addr),
@@ -33,28 +38,37 @@ module memory_system(
         .D(data3)
     );
 
+    mux_8bit dataMux(
+        .A(mem0),
+        .B(mem1),
+        .C(mem2),
+        .D(mem3),
+        .Sel(addr),
+        .Y(memory)
+    );
+
     byte_memory mem0(
         .store(store0),
         .data(data0),
-        .memory(memory)
+        .memory(memory0)
     );
 
     byte_memory mem1(
         .store(store1),
         .data(data1),
-        .memory(memory)
+        .memory(memory1)
     );
 
     byte_memory mem2(
         .store(store2),
         .data(data2),
-        .memory(memory)
+        .memory(memory2)
     );
 
     byte_memory mem3(
         .store(store3),
         .data(data3),
-        .memory(memory)
+        .memory(memory3)
     );
 
     // This should instantiate 4 instances of
