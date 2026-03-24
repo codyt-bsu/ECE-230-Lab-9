@@ -1,9 +1,9 @@
 module d_latch(
     input D, E,
-    output Q, NotQ
+    output reg Q, NotQ
 );
 
-    always @(E) begin 
+    always @(D, E) begin 
         if (E)
             Q <= D;
     end
